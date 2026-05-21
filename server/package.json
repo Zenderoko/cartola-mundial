@@ -1,0 +1,37 @@
+{
+  "name": "cartola-mundialera-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "sync:fixtures": "node scripts/syncFixtures.js",
+    "sync:squads": "node scripts/syncSquads.js",
+    "sync:standings": "node scripts/syncStandings.js",
+    "sync:match-details": "node scripts/syncMatchDetails.js --limit=33",
+    "sync:match-details:all": "node scripts/syncMatchDetails.js",
+    "sync:pre-seed": "node scripts/preSeed.js",
+    "test": "echo 'Tests coming soon'",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@clerk/express": "^2.1.15",
+    "axios": "^1.7.9",
+    "bottleneck": "^2.19.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "http-proxy-middleware": "^4.0.0",
+    "node-cron": "^3.0.3",
+    "pg": "^8.13.1",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "svix": "^1.93.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}

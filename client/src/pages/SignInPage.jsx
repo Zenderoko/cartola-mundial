@@ -1,0 +1,16 @@
+import { SignIn } from '@clerk/clerk-react';
+
+export default function SignInPage() {
+  return (
+    <div className="flex items-center justify-center min-h-[80vh]">
+      <SignIn
+        appearance={{
+          elements: {
+            rootBox: 'mx-auto',
+            card: 'shadow-xl rounded-xl',
+          },
+        }}
+      />
+    </div>
+  );
+}

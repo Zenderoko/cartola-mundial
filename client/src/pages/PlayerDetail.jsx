@@ -3,6 +3,7 @@ import { usePlayer } from '../hooks/usePlayers';
 import ApiWidget from '../components/ApiWidget';
 
 export default function PlayerDetail() {
+  const season = import.meta.env.VITE_API_FOOTBALL_SEASON || '2022';
   const { id } = useParams();
   const navigate = useNavigate();
   const { data, isLoading } = usePlayer(id);
@@ -124,7 +125,16 @@ export default function PlayerDetail() {
       <div className="mt-8">
         <h2 className="text-xl font-bold mb-3">Widget del Jugador - API Sports</h2>
         <div className="bg-white rounded-xl shadow p-6">
-          <ApiWidget type="player" id={player.id} />
+          <ApiWidget
+            type="player"
+            id={player.id}
+            attrs={{
+              season,
+              'player-statistics': true,
+              'player-injuries': true,
+              'player-trophies': true,
+            }}
+          />
         </div>
       </div>
     </div>
